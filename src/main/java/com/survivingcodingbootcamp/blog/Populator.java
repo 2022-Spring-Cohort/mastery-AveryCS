@@ -6,14 +6,20 @@ import com.survivingcodingbootcamp.blog.model.Topic;
 import com.survivingcodingbootcamp.blog.repository.HashtagRepository;
 import com.survivingcodingbootcamp.blog.repository.PostRepository;
 import com.survivingcodingbootcamp.blog.repository.TopicRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Populator implements CommandLineRunner {
 
+    @Autowired
     private TopicRepository topicRepo;
+
+    @Autowired
     private PostRepository postRepo;
+
+    @Autowired
     private HashtagRepository hashtagRepo;
 
 
@@ -57,11 +63,11 @@ public class Populator implements CommandLineRunner {
         Topic topic4 = new Topic("Object Oriented Programming and You");
         topicRepo.save(topic4);
 
-        Hashtag hashtag1 = new Hashtag(1,"#AwesomeBlog" );
+        Hashtag hashtag1 = new Hashtag("#AwesomeBlog",post3, post2 );
         hashtagRepo.save(hashtag1);
-        Hashtag hashtag2 = new Hashtag(2,"#BootCampIsAwesome" );
+        Hashtag hashtag2 = new Hashtag("#BootCampIsAwesome",post1);
         hashtagRepo.save(hashtag2);
-        Hashtag hashtag3 = new Hashtag(1,"#LovingLife" );
+        Hashtag hashtag3 = new Hashtag("#LovingLife",post2 );
         hashtagRepo.save(hashtag3);
 
     }

@@ -13,7 +13,7 @@ public class Post {
     private Topic topic;
     @Lob
     private String content;
-    @ManyToMany
+    @ManyToMany (mappedBy = "posts")
     private Collection<Hashtag> hashtags;
 
     protected Post() {

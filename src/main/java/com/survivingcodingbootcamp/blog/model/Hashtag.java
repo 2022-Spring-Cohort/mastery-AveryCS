@@ -1,6 +1,7 @@
 package com.survivingcodingbootcamp.blog.model;
 
 import javax.persistence.*;
+import java.util.Arrays;
 import java.util.Collection;
 
 @Entity
@@ -11,12 +12,13 @@ public class Hashtag {
     private long hashtagId;
     private String hashtag;
 
-    @ManyToMany(mappedBy = "hashtags")
+    @ManyToMany
     private Collection<Post> posts;
 
-    public Hashtag(long hashtagId, String hashtag) {
-        this.hashtagId = hashtagId;
+
+    public Hashtag(String hashtag, Post...posts) {
         this.hashtag = hashtag;
+        this.posts = Arrays.asList(posts);
     }
 
     public Hashtag (){
@@ -33,5 +35,10 @@ public class Hashtag {
     public Collection<Post> getPosts() {
         return posts;
     }
+
+
+
+
+
 }
 
