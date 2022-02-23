@@ -1,7 +1,9 @@
 package com.survivingcodingbootcamp.blog;
 
+import com.survivingcodingbootcamp.blog.model.Hashtag;
 import com.survivingcodingbootcamp.blog.model.Post;
 import com.survivingcodingbootcamp.blog.model.Topic;
+import com.survivingcodingbootcamp.blog.repository.HashtagRepository;
 import com.survivingcodingbootcamp.blog.repository.PostRepository;
 import com.survivingcodingbootcamp.blog.repository.TopicRepository;
 import org.springframework.boot.CommandLineRunner;
@@ -12,12 +14,13 @@ public class Populator implements CommandLineRunner {
 
     private TopicRepository topicRepo;
     private PostRepository postRepo;
+    private HashtagRepository hashtagRepo;
 
 
-    public Populator(TopicRepository topicRepo, PostRepository postRepo) {
-
+    public Populator(TopicRepository topicRepo, PostRepository postRepo, HashtagRepository hashtagRepo) {
         this.topicRepo = topicRepo;
         this.postRepo = postRepo;
+        this.hashtagRepo = hashtagRepo;
     }
 
     @Override
@@ -53,6 +56,13 @@ public class Populator implements CommandLineRunner {
         topicRepo.save(topic3);
         Topic topic4 = new Topic("Object Oriented Programming and You");
         topicRepo.save(topic4);
+
+        Hashtag hashtag1 = new Hashtag(1,"#AwesomeBlog" );
+        hashtagRepo.save(hashtag1);
+        Hashtag hashtag2 = new Hashtag(2,"#BootCampIsAwesome" );
+        hashtagRepo.save(hashtag2);
+        Hashtag hashtag3 = new Hashtag(1,"#LovingLife" );
+        hashtagRepo.save(hashtag3);
 
     }
 

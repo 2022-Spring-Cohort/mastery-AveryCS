@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=Montserrat&display=swap');
 
 :root{
-    --dark-background: #2F3E46;
+    --dark-background: #fffff;
     --text: #cad2c5;
     --light-highlight: #84A98C;
     --dark-highlight: #52796f;
-    --light-background:#354f52;
+    --light-background:#fffff;
 }
 
 h1{
