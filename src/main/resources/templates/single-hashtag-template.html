@@ -22,7 +22,9 @@
 <!--    <li th:each="tempHashtag : ${hashtags}"><a th:href="|/single-hashtag-template/${tempHashtag.hashtagId}|" th:text="${tempHashtag.hashtag}"></a></li>-->
 
 <!--    <li th:each="currentFoodTruck: ${hashtag.foodTrucks}"><a th:href="'/FoodTruckTemplate/' + ${currentFoodTruck.foodTruckId}"><img class="foodTruckImgList" th:src="'/img/hoodoo.jpg'"></a></li>-->
-    <li th:each="currentPost: ${hashtag.posts}"><a th:href="'/single-hashtag-template/' + ${currentPost.id}" th:text="${currentPost}"></a></li>
+    <li th:each="currentPost: ${hashtag.posts}"><a th:href="'/posts/' + ${currentPost.id}" th:text="${currentPost.title}"></a></li>
+
+<!--    <li th:each="currentPost: ${hashtag.posts}"><a th:href="'/single-hashtag-template/' + ${currentPost.id}" th:text="${currentPost}"></a></li>-->
 </div>
 
 </body>

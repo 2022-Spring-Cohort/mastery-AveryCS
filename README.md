@@ -9,7 +9,7 @@ We need you to help us add some new features and functionality to this website.
 1. Add a hashtag system to our posts.  The hashtag should be connected to the posts in a way that a post can have 
 different hashtags and a hashtag can be associated with different posts.
   - DONE Create a `Hashtag` POJO and provide the correct JPA entity mapping for it and the `POSTS`
-  - DONE Create a `single-hashtag-template.html` file that matches the uses the same style.css file as the other templates 
+  -  DONE Create a `single-hashtag-template.html` file that matches the uses the same style.css file as the other templates 
     and has a similar style to the other pages.  This page should display the posts associated with it's specific hashtag
     and provide links to those posts.
   - DONE Create a `all-hashtags-template.html` file that that matches the uses the same style.css file as the other templates 
