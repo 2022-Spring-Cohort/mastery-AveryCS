@@ -33,7 +33,7 @@ public class JpaWiringTest {
         entityManager.flush();
         entityManager.clear();
 
-        Topic retrievedTopic = topicRepo.findById(testTopic.getId()).get();
+        Topic retrievedTopic = topicRepo.findById(testTopic.getTopicId()).get();
 
         assertThat(retrievedTopic.getPosts()).containsExactlyInAnyOrder(testPost1, testPost2);
     }

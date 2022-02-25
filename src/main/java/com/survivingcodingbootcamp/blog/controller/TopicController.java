@@ -1,5 +1,6 @@
 package com.survivingcodingbootcamp.blog.controller;
 
+import com.survivingcodingbootcamp.blog.repository.PostRepository;
 import com.survivingcodingbootcamp.blog.repository.TopicRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TopicController {
 
     private TopicRepository topicRepo;
+    private PostRepository postRepo;
 
     public TopicController(TopicRepository topicRepo) {
 
@@ -22,4 +24,7 @@ public class TopicController {
         model.addAttribute("topic", topicRepo.findById(id).get());
         return "single-topic-template";
     }
+
+    //Need to add the submission of a new post to the topic controller. I will start here
+//     model.addAttribute("post", postRepo.findById(id).get() );
 }

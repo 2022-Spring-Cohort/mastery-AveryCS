@@ -23,6 +23,9 @@ public class Hashtag {
 
     public Hashtag (){
     }
+    public void addPost(Post post) {
+        posts.add(post);
+    }
 
     public long getHashtagId() {
         return hashtagId;
@@ -35,6 +38,11 @@ public class Hashtag {
     public Collection<Post> getPosts() {
         return posts;
     }
+
+    public boolean containsPost(Post post){
+            return posts.contains(post);
+        }
+
 
 
 
