@@ -15,9 +15,10 @@ public class TopicController {
     private TopicRepository topicRepo;
     private PostRepository postRepo;
 
-    public TopicController(TopicRepository topicRepo) {
+    public TopicController(TopicRepository topicRepo, PostRepository postRepo) {
 
         this.topicRepo = topicRepo;
+        this.postRepo = postRepo;
     }
     @GetMapping("/{id}")
     public String displaySingleTopic(@PathVariable long id, Model model) {
@@ -28,13 +29,13 @@ public class TopicController {
     @PostMapping("/SubmitPostTemplate/{topicId}")
     public String showSubmitPostemplate(@PathVariable long topicId, @RequestParam String title, @RequestParam String topic, @RequestParam String content,
                                         @RequestParam String author, Model model){
-        model.addAttribute("post", postRepo.findById(topicId).get());
+//        model.addAttribute("topic", postRepo.findById(topicId).get());
         Topic theTopic = topicRepo.findById(topicId).get();
         Post thePost = new Post(title, theTopic,content, author);
         postRepo.save(thePost);
 
 
-        return "redirect:/single-topic-template/"+topicId;
+        return "redirect:/topics/"+topicId;
     }
 
     //Need to add the submission of a new post to the topic controller. I will start here

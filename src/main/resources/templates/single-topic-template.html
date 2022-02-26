@@ -44,8 +44,13 @@
                     <label for="topic">TOPIC:</label><br>
                     <textarea id="topic" name="topic" rows="4" cols="50" maxlength="200"></textarea>
                     <input name = "id" type="hidden" th:value="${topic.topicId}">
-                    <label for="content">TOPIC:</label><br>
-                    <textarea id="topic" name="topic" rows="4" cols="50" maxlength
+                    <label for="content">content:</label><br>
+                    <textarea id="content" name="content" rows="4" cols="50" maxlength="200"></textarea>
+                    <input name = "id" type="hidden" th:value="${topic.topicId}">
+                    <label for="author">author:</label><br>
+                    <textarea id="author" name="author" rows="4" cols="50" maxlength="200"></textarea>
+                    <input name = "id" type="hidden" th:value="${topic.topicId}">
+
 
                     <input type="submit" value="Submit New Post">
                     <br>
