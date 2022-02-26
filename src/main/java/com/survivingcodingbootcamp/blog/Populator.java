@@ -71,6 +71,7 @@ public class Populator implements CommandLineRunner {
         Hashtag hashtag3 = new Hashtag("#LovingLife",post2 );
         hashtagRepo.save(hashtag3);
 
+
     }
 
 }

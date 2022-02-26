@@ -5,6 +5,7 @@ import com.survivingcodingbootcamp.blog.model.Post;
 import com.survivingcodingbootcamp.blog.repository.HashtagRepository;
 import com.survivingcodingbootcamp.blog.repository.PostRepository;
 import com.survivingcodingbootcamp.blog.repository.TopicRepository;
+import com.survivingcodingbootcamp.blog.storage.HashtagStorage;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +16,7 @@ import java.util.Optional;
 public class HashtagController {
     private HashtagRepository hashtagRepo;
     private PostRepository postRepo;
+    private HashtagStorage hashtagStorage;
 
     public HashtagController(HashtagRepository hashtagRepo, PostRepository postRepo) {
         this.hashtagRepo = hashtagRepo;
