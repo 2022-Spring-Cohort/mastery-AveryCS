@@ -16,7 +16,8 @@
         <h1 class="header__title">Surviving Coding Boot Camp</h1>
         <nav class="header__nav">
             <div class="header__nav-item"><a href="/" class="header__nav-link">Home</a></div>
-            <div class="header__nav-item"><a href="/hashtags" class="header__nav-link">Hashtags</a></div>
+            <div class="header__nav-item"><a href="/all-hashtags-template" class="header__nav-link"> All Hashtags</a></div>
+
         </nav>
     </header>
     <main class="main-content">
@@ -31,6 +32,33 @@
                 </div>
             </nav>
         </section>
+
+        <div class="createPost">
+            <h3>Create a Post</h3>
+            <div class="ReviewBoxes">
+
+                <form th:action="|/topics/SubmitPostTemplate/|+${topic.topicId}" method="POST">
+                    <label for="title">Post Title:</label><br>
+                    <textarea id="title" name="title" rows="1" cols="50" maxlength="100"></textarea>
+                    <input name = "id" type="hidden" th:value="${topic.topicId}">
+                    <label for="topic">TOPIC:</label><br>
+                    <textarea id="topic" name="topic" rows="4" cols="50" maxlength="200"></textarea>
+                    <input name = "id" type="hidden" th:value="${topic.topicId}">
+                    <label for="content">content:</label><br>
+                    <textarea id="content" name="content" rows="4" cols="50" maxlength="200"></textarea>
+                    <input name = "id" type="hidden" th:value="${topic.topicId}">
+                    <label for="author">author:</label><br>
+                    <textarea id="author" name="author" rows="4" cols="50" maxlength="200"></textarea>
+                    <input name = "id" type="hidden" th:value="${topic.topicId}">
+
+
+                    <input type="submit" value="Submit New Post">
+                    <br>
+                    <br>
+                </form>
+            </div>
+        </div>
+
     </main>
 </div>
 </body>

@@ -25,15 +25,15 @@ public class JpaWiringTest {
         Topic testTopic = new Topic("Name");
         topicRepo.save(testTopic);
 
-        Post testPost1 = new Post("Title", testTopic, "Content");
+        Post testPost1 = new Post("Title", testTopic, "Content","author");
         postRepo.save(testPost1);
-        Post testPost2 = new Post("Another Title", testTopic, "Content");
+        Post testPost2 = new Post("Another Title", testTopic, "Content","author");
         postRepo.save(testPost2);
 
         entityManager.flush();
         entityManager.clear();
 
-        Topic retrievedTopic = topicRepo.findById(testTopic.getId()).get();
+        Topic retrievedTopic = topicRepo.findById(testTopic.getTopicId()).get();
 
         assertThat(retrievedTopic.getPosts()).containsExactlyInAnyOrder(testPost1, testPost2);
     }
