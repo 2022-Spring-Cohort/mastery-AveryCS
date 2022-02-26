@@ -37,13 +37,15 @@
             <h3>Create a Post</h3>
             <div class="ReviewBoxes">
 
-                <form th:action="'/single-topic-template/'+${id}" method="POST">
+                <form th:action="|/topics/SubmitPostTemplate/|+${topic.topicId}" method="POST">
                     <label for="title">Post Title:</label><br>
                     <textarea id="title" name="title" rows="1" cols="50" maxlength="100"></textarea>
-                    <input name = "id" type="hidden" th:value="${post.id}">
-                    <label for="topic">Post Title:</label><br>
+                    <input name = "id" type="hidden" th:value="${topic.topicId}">
+                    <label for="topic">TOPIC:</label><br>
                     <textarea id="topic" name="topic" rows="4" cols="50" maxlength="200"></textarea>
-                    <input name = "id" type="hidden" th:value="${post.id}">
+                    <input name = "id" type="hidden" th:value="${topic.topicId}">
+                    <label for="content">TOPIC:</label><br>
+                    <textarea id="topic" name="topic" rows="4" cols="50" maxlength
 
                     <input type="submit" value="Submit New Post">
                     <br>
